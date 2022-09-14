@@ -9,15 +9,16 @@ function makeGrid(rows, columns) {
         cell.classList.add('cell');
         gridContainer.appendChild(cell);
     }
+    const cells = document.querySelectorAll('div.cell');
+    cells.forEach(cell => cell.addEventListener('mouseover', changeColor)); 
 }
 
 makeGrid(16, 16)
 
-function changeColor(e) {
+function changeColor() {
     this.style.backgroundColor = "gray";
 }
-const cells = document.querySelectorAll('div.cell');
-cells.forEach(cell => cell.addEventListener('mouseover', changeColor)); 
+
 
 const button = document.querySelector('button#numberOfSquares');
 button.addEventListener('click', promptUser);
