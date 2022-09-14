@@ -19,7 +19,6 @@ function changeColor() {
     this.style.backgroundColor = "gray";
 }
 
-
 const button = document.querySelector('button#numberOfSquares');
 button.addEventListener('click', promptUser);
 
@@ -29,7 +28,7 @@ function promptUser() {
         gridContainer.removeChild(removed[i])
     }
 
-    const columns = prompt('How many Columns?', "");
-    const rows = prompt('How many rows?', '')
+    const columns = prompt('How many Rows/Columns?', "");
+    const rows = columns
     makeGrid(rows, columns);
 }
