@@ -16,7 +16,17 @@ function makeGrid(rows, columns) {
 makeGrid(16, 16)
 
 function changeColor() {
-    this.style.backgroundColor = "gray";
+    let color = randomRgbColor();
+    this.style.backgroundColor = color;
+}
+
+function randomRgbColor () {
+    let redColor = Math.round(Math.random()*255);
+    let greenColor = Math.round(Math.random()*255);
+    let blueColor = Math.round(Math.random()*255);
+    let opacity = Math.random().toFixed(1);
+
+    return `rgba(${redColor},${greenColor},${blueColor},${opacity})`
 }
 
 const button = document.querySelector('button#numberOfSquares');
