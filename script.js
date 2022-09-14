@@ -13,7 +13,7 @@ function makeGrid(rows, columns) {
 
 makeGrid(16, 16)
 
-function changeColor() {
+function changeColor(e) {
     this.style.backgroundColor = "gray";
 }
 const cells = document.querySelectorAll('div.cell');
@@ -23,7 +23,11 @@ const button = document.querySelector('button#numberOfSquares');
 button.addEventListener('click', promptUser);
 
 function promptUser() {
-    gridContainer.innerHTML = '';
+    const removed = Array.from(gridContainer.children)
+    for(let i = 0; i < removed.length; i++) {
+        gridContainer.removeChild(removed[i])
+    }
+
     const columns = prompt('How many Columns?', "");
     const rows = prompt('How many rows?', '')
     makeGrid(rows, columns);
