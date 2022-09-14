@@ -1,5 +1,10 @@
+:root {
+    --grid-columns: 1;
+    --grid-rows: 1;
+}
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -7,6 +12,12 @@ body {
     width: 80vw;
     height: 80vh;
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-columns: repeat(16, 1fr);
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+}
+
+button {
+    margin: 20px;
+    padding: 5px;
+    font-weight: bold;
 }
